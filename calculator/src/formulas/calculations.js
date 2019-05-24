@@ -9,9 +9,11 @@
 //     return +(test.toFixed(digits));
 //   }
 
-export const futureValue = (pv, int, yr) => {
+export const futureValue = (pv, int, yr, pmt) => {
     const intConversion = (1+int/100)
-    const fv = pv*(Math.pow(intConversion,yr))
+    const fv = 0; 
+    // if()
+    // pv*(Math.pow(intConversion,yr))
     // console.log(fv)
     return fv;
 }

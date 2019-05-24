@@ -18,16 +18,8 @@ class FutureValue extends React.Component {
     this.setState({[ev.target.name]: ev.target.value});
   };
 
-  onSubmit = (ev) => {
-    // console.log()
-    // const variables = {
-    //   pv: this.
-    // };
-    // this.setState({pv})
-    console.log("possible multiple values", ev);
-    console.log("PV", this.state.pv);
-    console.log("INT", this.state.int);
-    const fv = futureValue(this.state.pv, this.state.int, this.state.years);
+  onSubmit = () => {
+    const fv = futureValue(this.state.pv, this.state.int, this.state.years, this.state.pmt);
     this.setState({futureVal: fv})
   }
 
@@ -71,7 +63,7 @@ class FutureValue extends React.Component {
           name='years'
           type='number'
           placeholder='Years'
-          value={this.state.years}
+          value={this.state.pmt}
           onChange={this.onChange}
         />
         <div className="future-value-cal" onClick={event => this.onSubmit(event)}>
