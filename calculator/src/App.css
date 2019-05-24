@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+
+.future-value-cal{
+  margin: 0 auto;
+  border: 1px solid red;
+  width: 200px;  
+}

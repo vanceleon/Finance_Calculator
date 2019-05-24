@@ -8,6 +8,7 @@ class FutureValue extends React.Component {
       pv: 0,
       int: 0,
       years: 0,
+      pmt: 0,
       futureVal: 0
     };
   }
@@ -34,6 +35,7 @@ class FutureValue extends React.Component {
     return (
       <form>
         <h1>Calculator:</h1>
+        <span className="label">PV</span>
         <input
           className='present-value'
           name='pv'
@@ -42,6 +44,8 @@ class FutureValue extends React.Component {
           value={this.state.pv}
           onChange={this.onChange}
         />
+        
+        <span className="label">Interest Rate</span>
         <input
           className='interest-rate'
           name='int'
@@ -50,8 +54,20 @@ class FutureValue extends React.Component {
           value={this.state.int}
           onChange={this.onChange}
         />
+        
+        <span className="label">Years</span>
         <input
           className='term-length'
+          name='years'
+          type='number'
+          placeholder='Years'
+          value={this.state.years}
+          onChange={this.onChange}
+        />
+        
+        <span className="label">PMT</span>
+        <input
+          className='pmt'
           name='years'
           type='number'
           placeholder='Years'
