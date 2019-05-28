@@ -60,9 +60,9 @@ class FutureValue extends React.Component {
         <span className="label">PMT</span>
         <input
           className='pmt'
-          name='years'
+          name='pmt'
           type='number'
-          placeholder='Years'
+          placeholder='PMT'
           value={this.state.pmt}
           onChange={this.onChange}
         />
