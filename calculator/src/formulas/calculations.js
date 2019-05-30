@@ -4,18 +4,22 @@ export const futureValue = (pv, int, yr, pmt) => {
   if (pmt !== 0 && pv === 0) {
     fv = futureValueOfAnnuity(pv, intConversion, yr, pmt);
   } else if (pmt !== 0 && pv !== 0) {
-    fv = (futureValueOfAnnuity(pv, intConversion, yr, pmt)) + ;
+    fv = futureValueOfPresentValue(pv, intConversion, yr) + (futureValueOfAnnuity(pv, intConversion, yr, pmt))
+    console.log("present value and annuity",fv);
 
   }else {
-    fv = pv * Math.pow(intConversion, yr);
+    fv = futureValueOfPresentValue(pv, intConversion, yr);
   }
   return fv;
 };
 
 
 // creating separate function to keep dry code
-export const futureValueOfPresentValue = (pv, int, yr) {
-
+export const futureValueOfPresentValue = (pv, int, yr) => {
+  let fv = 0;
+  fv = pv * Math.pow(int, yr);
+  console.log(fv)
+  return fv;
 }
 
 
