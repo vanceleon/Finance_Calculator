@@ -23,5 +23,5 @@ render() {
 
 }
 
-export default FutureValue;
+export default StockReturn;
 
