@@ -1,5 +1,5 @@
 export const futureValue = (pv, int, yr, pmt) => {
-  const intConversion = ((1 + int) / 100) - 1;
+  const intConversion = (int / 100);
   console.log("intConversion",intConversion);
   let fv = 0;
   if (pmt !== 0 && pv === 0) {
@@ -22,9 +22,11 @@ export const futureValue = (pv, int, yr, pmt) => {
 // creating separate function to keep dry code
 export const futureValueOfPresentValue = (pv, int, yr) => {
   let fv = 0;
+  let roundFV;
   fv = pv * Math.pow((1+int), yr);
   // console.log(fv)
-  return fv;
+  roundFV = fv.toFixed(2)
+  return roundFV;
 }
 
 
