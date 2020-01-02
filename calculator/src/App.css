@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -32,8 +33,34 @@
   }
 }
 
-.future-value-cal{
-  margin: 0 auto;
-  border: 1px solid red;
-  width: 200px;  
+.calculator-face {
+  width: 300px;
+  height: 500px;
+  display:flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.cash-flow-inputs {
+  display: flex;
+  border: 1px solid blue;
+ flex-direction: column;
+ height: 400px;
+
+  /* align-items: flex-end;  */
+}
+
+
+.result {
+  /* display:flex; */
+border: 1px solid red;
+/* flex-direction: column; */
+justify-content: flex-end;
+  /* flex-direction: colu
+  mn; */
+  /* justify-content: center;  */
+}
+.label {
+  margin: 0 50px;
+  /* width: 100px; */
 }

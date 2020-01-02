@@ -17,4 +17,4 @@ function NumberButtons() {
             <div>0</div>
         </div>
     );
-};
+}
