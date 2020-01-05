@@ -18,3 +18,4 @@ C=cash flow per period
 i=interest rate
 n=number of payments
 ​	
+Cost of Equity = Risk-Free Rate of Return + Beta * (Market Rate of Return - Risk-Free Rate of Return)
