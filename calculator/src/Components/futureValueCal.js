@@ -1,5 +1,6 @@
 import React from 'react';
 import { futureValue } from '../formulas/calculations';
+import { NumberButtons } from './numberButtons.js';
 
 class FutureValue extends React.Component {
   constructor() {
@@ -76,6 +77,9 @@ class FutureValue extends React.Component {
           onChange={this.onChange}
         /> */}
         </form>
+
+        <NumberButtons />
+
         <div className='result'>
           <div className='label' onClick={event => this.onSubmit(event)}>
             Cal Future Value

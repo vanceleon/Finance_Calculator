@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function NumberButtons() {
+export default function NumberButtons() {
     const [press, setPress] = useState(false);
 
     return (
