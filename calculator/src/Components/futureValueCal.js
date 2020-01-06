@@ -1,6 +1,6 @@
 import React from 'react';
 import { futureValue } from '../formulas/calculations';
-import { NumberButtons } from './numberButtons.js';
+import NumberButtons from './numberButtons.js';
 
 class FutureValue extends React.Component {
   constructor() {
