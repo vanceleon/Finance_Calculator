@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 
 export default function NumberButtons() {
-    const [press, setPress] = useState(false);
+    // const [press, setPress] = useState(false);
 
     return (
-        <div>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>0</div>
+        <div className='buttons'>
+            <div className='number'>1</div>
+            <div className='number'>2</div>
+            <div className='number'>3</div>
+            <div className='number'>4</div>
+            <div className='number'>5</div>
+            <div className='number'>6</div>
+            <div className='number'>7</div>
+            <div className='number'>8</div>
+            <div className='number'>9</div>
+            <div className='number'>0</div>
         </div>
     );
 }

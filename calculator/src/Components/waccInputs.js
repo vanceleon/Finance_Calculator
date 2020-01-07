@@ -45,22 +45,7 @@ export default function WACCInputs() {
           />
         </div>
 
-        {/* <span className="label">PMT</span>
-        <input
-          className='pmt'
-          name='pmt'
-          type='number'
-          placeholder='PMT'
-          value={this.state.pmt}
-          onChange={this.onChange}
-        /> */}
       </form>
-      // <div className='result'>
-      //   <div className='label' onClick={event => this.onSubmit(event)}>
-      //     Cal Future Value
-      //   </div>
-      // </div>
-      // <div className='future-value'>{this.state.futureVal}</div>
    
   );
 }
