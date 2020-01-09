@@ -4,22 +4,29 @@ const initialState = {
   beta: 0,
   rf: 0,
   rm: 0,
+  wacc:0
 }
 
 export default function WACCInputs() {
   const [input, setInput] = useState(initialState);
 
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    
+  }
+
   return (
-      <form className='cash-flow-inputs'>
+      <form className='calculator-face'>
         <div className='pv'>
           <span className='label'>Beta</span>
           <input
             className='present-value'
             name='pv'
             type='number'
-            placeholder='Present Value'
-            value={this.state.pv}
-            onChange={thisonChange}
+            placeholder='Beta'
+            // value={this.state.pv}
+            // onChange={thisonChange}
           />
         </div>
         <div className='interest-rates'>
@@ -28,21 +35,27 @@ export default function WACCInputs() {
             className='interest-rate'
             name='int'
             type='number'
-            placeholder='Interest (APR)'
-            value={this.state.int}
-            onChange={this.onChange}
+            placeholder='Risk Free Rate'
           />
         </div>
         <div className='years'>
-          <span className='label'>Years</span>
+          <span className='label'>Market Return</span>
           <input
             className='term-length'
             name='years'
             type='number'
-            placeholder='Years'
-            value={this.state.years}
-            onChange={this.onChange}
+            placeholder='Market Return'
+            // value={this.state.years}
+            // onChange={this.onChange}
           />
+        <div className="result" onClick={e=> {
+          handleSubmit(e)
+        }}>
+          =
+        </div>
+        </div>
+        <div className="answer">
+          input.wacc
         </div>
 
       </form>

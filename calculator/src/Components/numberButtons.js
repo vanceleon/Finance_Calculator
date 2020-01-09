@@ -14,7 +14,7 @@ export default function NumberButtons() {
             <div className='number'>7</div>
             <div className='number'>8</div>
             <div className='number'>9</div>
-            <div className='number'>0</div>
+            <div className='number-0'>0</div>
         </div>
     );
 }

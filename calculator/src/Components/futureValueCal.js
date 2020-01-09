@@ -1,6 +1,6 @@
 import React from 'react';
 import { futureValue } from '../formulas/calculations';
-import NumberButtons from './numberButtons.js';
+// import NumberButtons from './numberButtons.js';
 
 class FutureValue extends React.Component {
   constructor() {
@@ -32,7 +32,7 @@ class FutureValue extends React.Component {
     return (
       <div className='calculator-face'>
         <form className='cash-flow-inputs'>
-          <h1>Calculator:</h1>
+          {/* <h1>Calculator:</h1> */}
           <div className='pv'>
             <span className='label'>PV</span>
             <input
@@ -77,12 +77,9 @@ class FutureValue extends React.Component {
           onChange={this.onChange}
         /> */}
         </form>
-
-        <NumberButtons />
-
         <div className='result'>
           <div className='label' onClick={event => this.onSubmit(event)}>
-            Cal Future Value
+            =
           </div>
         </div>
         <div className='future-value'>{this.state.futureVal}</div>
