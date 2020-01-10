@@ -30,6 +30,7 @@ export default function WACCInputs() {
 
   return (
       <form className='calculator-face'>
+        <h1>Cost of Equity</h1>
         <div className='pv'>
           <span className='label'>Beta</span>
           <input
@@ -71,7 +72,7 @@ export default function WACCInputs() {
         <div className="answer">
           {costOfEquity}
         </div>
-
+        <h1>Cost of Debt</h1>
       </form>
    
   );

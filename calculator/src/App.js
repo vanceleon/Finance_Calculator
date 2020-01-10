@@ -30,7 +30,7 @@ function App() {
         <Route path='/wacc'>
           <WACCInputs />
         </Route>
-        <NumberButtons />
+        {/* <NumberButtons /> */}
       </div>
     </Router>
   );
