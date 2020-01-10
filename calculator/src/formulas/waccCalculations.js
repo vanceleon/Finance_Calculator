@@ -5,7 +5,7 @@ export const weightedAverageCostOfCapital = (rf, beta, rm) => {
   console.log(convertedRM)
   const costOfEquity = convertedRF + beta * (convertedRM - convertedRF)
   console.log(beta)
-
+// currently only solving for cost of equity
   return costOfEquity;
 }
 

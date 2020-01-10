@@ -12,7 +12,7 @@ export default function WACCInputs() {
   const [beta, setBeta] = useState(0);
   const [rm, setRm] = useState(0);
   const [rf, setRf] = useState(0);
-  const [wacc, setWacc] = useState(0);
+  const [costOfEquity, setCostOfEquity] = useState(0);
   
   // const onChange = e => {
   //   e.preventDefault();
@@ -23,9 +23,9 @@ export default function WACCInputs() {
   const handleSubmit = e => {
     e.preventDefault();
     // console.log(e.target);
-    const wacc = weightedAverageCostOfCapital(rf, beta, rm)
-    console.log(wacc)
-    setWacc(wacc);
+    const costOfEquity = weightedAverageCostOfCapital(rf, beta, rm)
+    // console.log(wacc)
+    setCostOfEquity(costOfEquity);
   }
 
   return (
@@ -69,7 +69,7 @@ export default function WACCInputs() {
         </div>
         </div>
         <div className="answer">
-          {wacc}
+          {costOfEquity}
         </div>
 
       </form>
