@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../modules/waccCalculations';
+import {weightedAverageCostOfCapital, costOfDebt, costOfEquity} from '../modules/waccCalculations';
 
 export default function WACCInputs() {
   // Cost of Equity
