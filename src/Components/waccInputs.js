@@ -33,10 +33,10 @@ export default function WACCInputs() {
       int,
       taxRate
     };
-    console.log('I fired', WACCObj);
     const costofEq = costOfEquity(WACCObj);
     setCostOfEquity(costofEq);
   };
+
   const handleDebtSubmit = e => {
     e.preventDefault();
     const WACCObj = {
@@ -48,10 +48,10 @@ export default function WACCInputs() {
       int,
       taxRate
     };
-    console.log('I fired', WACCObj);
     const costofD = costOfDebt(WACCObj);
     setCostOfDebt(costofD);
   };
+
   const handleWaccSubmit = e => {
     e.preventDefault();
     const WACCObj = {
@@ -63,8 +63,6 @@ export default function WACCInputs() {
       int,
       taxRate
     };
-    console.log('I fired', WACCObj);
-    console.log('I fired');
     const wacc = weightedAverageCostOfCapital(WACCObj);
     setWACC(wacc);
   };
