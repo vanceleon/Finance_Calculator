@@ -1,15 +1,21 @@
-export const weightedAverageCostOfCapital = (rf, beta, rm) => {
+const interestConversion = interest => {
+  const interestConversion = interest / 100;
+  return interestConversion;
+};
+
+export const weightedAverageCostOfCapital = (weightOfDebt, weightOfEquity) => {
+  // const weight
+  // const weightedCostOfDebt = weightOfDebt * costOfD;
+};
+
+const costOfEquity = (rf, beta, rm) => {
   const convertedRF = interestConversion(rf);
   const convertedRM = interestConversion(rm);
-  console.log(convertedRF)
-  console.log(convertedRM)
-  const costOfEquity = convertedRF + beta * (convertedRM - convertedRF)
-  console.log(beta)
-// currently only solving for cost of equity
-  return costOfEquity;
-}
+  const costOfEq = convertedRF + beta * (convertedRM - convertedRF);
+};
 
-const interestConversion = interest => {
-  const interestConversion = (interest / 100);
-  return interestConversion;
-}
+export const costOfDebt = (int, taxRate) => {
+  const convertedInt = interestConversion(int);
+  const costOfD = convertedInt * (1 + taxRate);
+  return costOfD;
+};
