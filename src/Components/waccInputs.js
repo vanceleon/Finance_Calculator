@@ -9,16 +9,27 @@ import {weightedAverageCostOfCapital} from '../formulas/waccCalculations';
 // }
 
 export default function WACCInputs() {
+  // Cost of Equity
   const [beta, setBeta] = useState(0);
   const [rm, setRm] = useState(0);
   const [rf, setRf] = useState(0);
   const [costOfEquity, setCostOfEquity] = useState(0);
+  
+  // Cost of Debt
+  const [int, setInt] = useState(0);
+  const [taxRate, setTaxRate] = useState(0);
   const [costOfDebt, setCostOfDebt] = useState(0);
+  
+  // Weighted Average Cost of Capital
+  const [weightEquity, setEquityWeight] = useState(0);
+  const [weightDebt, setDebtWeighted] = useState(0);
+  const [wacc, setWACC] = useState(0);
+  
   
   const handleSubmit = e => {
     e.preventDefault();
-    const costOfEquity = weightedAverageCostOfCapital(rf, beta, rm);
-    setCostOfEquity(costOfEquity);
+    const wacc = weightedAverageCostOfCapital(rf, beta, rm);
+    setCostOfEquity(wacc);
   }
 
   return (
@@ -68,42 +79,38 @@ export default function WACCInputs() {
         {/* will put cost of debt inputs here */}
         <h1>Cost of Debt</h1>
         <div className='pv'>
-          <span className='label'>Beta</span>
+          <span className='label'>Interest Rate</span>
           <input
             className='present-value'
-            name='beta'
+            name='int'
             type='number'
-            placeholder='Beta'
+            placeholder='Interest Rate'
             value={beta}
-            onChange={e => setBeta(e.target.value)}
+            onChange={e => setInt(e.target.value)}
           />
         </div>
         <div className='interest-rates'>
-          <span className='label'>Risk Free Rate</span>
+          <span className='label'>Tax Rate</span>
           <input
             className='interest-rate'
-            name='rf'
+            name='taxRate'
             type='number'
-            placeholder='Risk Free Rate'
+            placeholder='Tax Rate'
             value={rf}
-            onChange={e => setRf(e.target.value)}
+            onChange={e => setTaxRate(e.target.value)}
           />
         </div>
-        <div className='years'>
-          <span className='label'>Market Return</span>
-          <input
-            className='term-length'
-            name='rm'
-            type='number'
-            placeholder='Market Return'
-            value={rm}
-            onChange={e => setRm(e.target.value)}
-          />
+ 
         <div className="result" onClick={e=> {
           handleSubmit(e)
         }}>
           =
         </div>
+
+        <div className="result" onClick={e=> {
+          handleSubmit(e)
+        }}>
+          Calculate Weighted Average Cost of Capital
         </div>
         <div className="answer">
           {costOfDebt}
