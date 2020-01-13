@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {weightedAverageCostOfCapital} from '../formulas/waccCalculations';
-
-// const initialState = {
-//   beta: 0,
-//   rf: 0,
-//   rm: 0,
-//   wacc:0
-// }
+import '../modules/waccCalculations';
 
 export default function WACCInputs() {
   // Cost of Equity
@@ -22,14 +15,29 @@ export default function WACCInputs() {
   
   // Weighted Average Cost of Capital
   const [weightEquity, setEquityWeight] = useState(0);
-  const [weightDebt, setDebtWeighted] = useState(0);
+  const [weightDebt, setDebtWeight] = useState(0);
   const [wacc, setWACC] = useState(0);
   
   
   const handleSubmit = e => {
     e.preventDefault();
-    const wacc = weightedAverageCostOfCapital(rf, beta, rm);
-    setCostOfEquity(wacc);
+    const WACCObj = {
+      weightDebt,
+      weightEquity,
+      rf,
+      beta,
+      rm,
+      int,
+      taxRate
+    };
+    if (WACCObj.weightOfDebt) {
+      const wacc = weightedAverageCostOfCapital(WACCObj);
+      setWACC(wacc)
+    } else if (WACCObj.rf) {
+      
+    } else {
+      
+    }
   }
 
   return (
@@ -76,7 +84,7 @@ export default function WACCInputs() {
         <div className="answer">
           {costOfEquity}
         </div>
-        {/* will put cost of debt inputs here */}
+
         <h1>Cost of Debt</h1>
         <div className='pv'>
           <span className='label'>Interest Rate</span>
@@ -85,7 +93,7 @@ export default function WACCInputs() {
             name='int'
             type='number'
             placeholder='Interest Rate'
-            value={beta}
+            value={int}
             onChange={e => setInt(e.target.value)}
           />
         </div>
@@ -96,7 +104,7 @@ export default function WACCInputs() {
             name='taxRate'
             type='number'
             placeholder='Tax Rate'
-            value={rf}
+            value={taxRate}
             onChange={e => setTaxRate(e.target.value)}
           />
         </div>
@@ -106,14 +114,38 @@ export default function WACCInputs() {
         }}>
           =
         </div>
-
+        <div className="answer">
+          {costOfDebt}
+        </div>
+        <div className='pv'>
+          <span className='label'>Weight of Equity</span>
+          <input
+            className='present-value'
+            name='weightEquity'
+            type='number'
+            placeholder='Weight of Equity'
+            value={weightEquity}
+            onChange={e => setEquityWeight(e.target.value)}
+          />
+        </div>
+        <div className='interest-rates'>
+          <span className='label'>Weight of Debt</span>
+          <input
+            className='interest-rate'
+            name='weightDebt'
+            type='number'
+            placeholder='Weight of Debt'
+            value={weightDebt}
+            onChange={e => setDebtWeight(e.target.value)}
+          />
+        </div>
         <div className="result" onClick={e=> {
           handleSubmit(e)
         }}>
           Calculate Weighted Average Cost of Capital
         </div>
         <div className="answer">
-          {costOfDebt}
+          {wacc}
         </div>
       </form>
    
