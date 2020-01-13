@@ -22,7 +22,7 @@ export default function WACCInputs() {
   const [weightDebt, setDebtWeight] = useState(0);
   const [wacc, setWACC] = useState(0);
 
-  const handleSubmit = e => {
+  const handleEquitySubmit = e => {
     e.preventDefault();
     const WACCObj = {
       weightDebt,
@@ -33,18 +33,40 @@ export default function WACCInputs() {
       int,
       taxRate
     };
-    console.log('I fired', WACCObj)
-    if (WACCObj.weightEquity) {
-      console.log('I fired')
-      const wacc = weightedAverageCostOfCapital(WACCObj);
-      setWACC(wacc);
-    } else if (WACCObj.rf) {
-      const costofEq = costOfEquity(WACCObj);
-      setCostOfEquity(costofEq);
-    } else {
-      const costofD = costOfDebt(WACCObj);
-      setCostOfDebt(costofD);
-    }
+    console.log('I fired', WACCObj);
+    const costofEq = costOfEquity(WACCObj);
+    setCostOfEquity(costofEq);
+  };
+  const handleDebtSubmit = e => {
+    e.preventDefault();
+    const WACCObj = {
+      weightDebt,
+      weightEquity,
+      rf,
+      beta,
+      rm,
+      int,
+      taxRate
+    };
+    console.log('I fired', WACCObj);
+    const costofD = costOfDebt(WACCObj);
+    setCostOfDebt(costofD);
+  };
+  const handleWaccSubmit = e => {
+    e.preventDefault();
+    const WACCObj = {
+      weightDebt,
+      weightEquity,
+      rf,
+      beta,
+      rm,
+      int,
+      taxRate
+    };
+    console.log('I fired', WACCObj);
+    console.log('I fired');
+    const wacc = weightedAverageCostOfCapital(WACCObj);
+    setWACC(wacc);
   };
 
   return (
@@ -85,7 +107,7 @@ export default function WACCInputs() {
         <div
           className='result'
           onClick={e => {
-            handleSubmit(e);
+            handleEquitySubmit(e);
           }}
         >
           =
@@ -119,7 +141,7 @@ export default function WACCInputs() {
       <div
         className='result'
         onClick={e => {
-          handleSubmit(e);
+          handleDebtSubmit(e);
         }}
       >
         =
@@ -152,7 +174,7 @@ export default function WACCInputs() {
       <div
         className='result'
         onClick={e => {
-          handleSubmit(e);
+          handleWaccSubmit(e);
         }}
       >
         Calculate Weighted Average Cost of Capital
