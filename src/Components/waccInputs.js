@@ -13,18 +13,11 @@ export default function WACCInputs() {
   const [rm, setRm] = useState(0);
   const [rf, setRf] = useState(0);
   const [costOfEquity, setCostOfEquity] = useState(0);
+  const [costOfDebt, setCostOfDebt] = useState(0);
   
-  // const onChange = e => {
-  //   e.preventDefault();
-  //   setInput({inpute.target.name:e.target.value});
-  //   console.log(input)
-  // }
-
   const handleSubmit = e => {
     e.preventDefault();
-    // console.log(e.target);
-    const costOfEquity = weightedAverageCostOfCapital(rf, beta, rm)
-    // console.log(wacc)
+    const costOfEquity = weightedAverageCostOfCapital(rf, beta, rm);
     setCostOfEquity(costOfEquity);
   }
 
@@ -72,7 +65,49 @@ export default function WACCInputs() {
         <div className="answer">
           {costOfEquity}
         </div>
+        {/* will put cost of debt inputs here */}
         <h1>Cost of Debt</h1>
+        <div className='pv'>
+          <span className='label'>Beta</span>
+          <input
+            className='present-value'
+            name='beta'
+            type='number'
+            placeholder='Beta'
+            value={beta}
+            onChange={e => setBeta(e.target.value)}
+          />
+        </div>
+        <div className='interest-rates'>
+          <span className='label'>Risk Free Rate</span>
+          <input
+            className='interest-rate'
+            name='rf'
+            type='number'
+            placeholder='Risk Free Rate'
+            value={rf}
+            onChange={e => setRf(e.target.value)}
+          />
+        </div>
+        <div className='years'>
+          <span className='label'>Market Return</span>
+          <input
+            className='term-length'
+            name='rm'
+            type='number'
+            placeholder='Market Return'
+            value={rm}
+            onChange={e => setRm(e.target.value)}
+          />
+        <div className="result" onClick={e=> {
+          handleSubmit(e)
+        }}>
+          =
+        </div>
+        </div>
+        <div className="answer">
+          {costOfDebt}
+        </div>
       </form>
    
   );
