@@ -34,8 +34,16 @@ export const futureValueOfAnnuity = (pv, int, yr, pmt) => {
   let fv = 0;
   let roundFV;
   // console.log(Math.pow((onePlusInterest, yr)));
-  fv = pmt * (((Math.pow((1 + int), yr) - 1) / int));
+  console.log("pv",pv);
+  if(pv){
+    console.log("pv 2",pv);
+    const initialCashFlow = futureValueOfPresentValue(pv, int, 1);
+    fv = (pmt * (((Math.pow((1 + int), yr) - 1) / int)));
+    console.log('fv of ', fv)
+  }
+  fv = (pmt * (((Math.pow((1 + int), yr) - 1) / int)));
   // console.log(fv);
+
   roundFV = fv.toFixed(2)
   return roundFV;
 };

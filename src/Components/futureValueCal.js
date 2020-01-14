@@ -67,7 +67,7 @@ class FutureValue extends React.Component {
             />
           </div>
 
-          {/* <span className="label">PMT</span>
+          <span className="label">PMT</span>
         <input
           className='pmt'
           name='pmt'
@@ -75,7 +75,7 @@ class FutureValue extends React.Component {
           placeholder='PMT'
           value={this.state.pmt}
           onChange={this.onChange}
-        /> */}
+        />
         </form>
         <div className='result'>
           <div className='label' onClick={event => this.onSubmit(event)}>
