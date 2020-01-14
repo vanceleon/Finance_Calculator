@@ -36,14 +36,27 @@ export const futureValueOfAnnuity = (pv, int, yr, pmt) => {
   // console.log(Math.pow((onePlusInterest, yr)));
   console.log("pv",pv);
   if(pv){
-    console.log("pv 2",pv);
-    const initialCashFlow = futureValueOfPresentValue(pv, int, 1);
-    fv = (pmt * (((Math.pow((1 + int), yr) - 1) / int)));
-    console.log('fv of ', fv)
-  }
-  fv = (pmt * (((Math.pow((1 + int), yr) - 1) / int)));
-  // console.log(fv);
+    // if pv is given needs to be a CF problem
+    const cashFlows = []
+    let i = yr;
+    while (i > 1) {
+      if(i === yr) {
+        const pv1 = parseInt(pv, 10); 
+        const pmt1 = parseInt(pmt, 10); 
+        const initialCashFlow = pv1 + pmt1;        
+        const cF1 = initialCashFlow * Math.pow((1+int), i);
+        cashFlows.push(cF1);
+      }      
+      let cfPayments = pmt * Math.pow((1+int), i);
+      cashFlows.push(cfPayments);
+      i--;
+    }
+    console.log(cashFlows);
+    for (let i = 0; i < cashFlows.length; i++) {
+      fv += cashFlows[i];
+    }
 
+  }
   roundFV = fv.toFixed(2)
   return roundFV;
 };
