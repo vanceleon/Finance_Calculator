@@ -6,8 +6,6 @@ const interestConversion = interest => {
 export const weightedAverageCostOfCapital = WACCObj => {
   const costOfEq = costOfEquity(WACCObj);
   const costOfD = costOfDebt(WACCObj);
-  console.log(costOfEq);
-  console.log(costOfD);
   const wacc = costOfD * WACCObj.weightDebt + costOfEq * WACCObj.weightEquity;
   const roundedWacc = wacc.toFixed(2);
   return roundedWacc;

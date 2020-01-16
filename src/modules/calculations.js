@@ -27,9 +27,6 @@ export const futureValueOfPresentValue = (pv, int, yr) => {
 export const futureValueOfAnnuity = (pv, int, yr, pmt) => {
   let fv = 0;
   let roundFV;
-  // console.log(Math.pow((onePlusInterest, yr)));
-  console.log('pv', pv);
-  console.log('int', 1 + int);
   const compoundingCashFlows = { result: 0 };
   if (pv) {
     //this calculates beginning period value
@@ -52,10 +49,8 @@ export const futureValueOfAnnuity = (pv, int, yr, pmt) => {
       i--;
     }
   } else {
-    console.log(Math.pow((1+int),yr) - 1);
     compoundingCashFlows.result = pmt * ((Math.pow((1+int),yr) - 1)/int); //This is end of the period calculation
   }
   roundFV = compoundingCashFlows.result.toFixed(2);
-  console.log(roundFV);
   return roundFV;
 };
