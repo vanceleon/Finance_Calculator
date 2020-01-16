@@ -55,12 +55,9 @@ export const futureValueOfAnnuity = (pv, int, yr, pmt, period) => {
         const initialCashFlow = pv; //pmt comes in at end of the period
         compoundingCashFlows.result = initialCashFlow * interestMultiplier;
         compoundingCashFlows.result += pmt;
-        console.log('ending period 1', compoundingCashFlows.result)
       } else if (i < yr) {
-        // compoundingCashFlows.result += pmt;
         let endPeriodCashFlow =
         compoundingCashFlows.result * interestMultiplier;
-        console.log('ending period 1', compoundingCashFlows.result)
         endPeriodCashFlow += pmt;
         compoundingCashFlows.result = endPeriodCashFlow;
       }
