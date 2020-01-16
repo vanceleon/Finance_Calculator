@@ -10,7 +10,8 @@ class FutureValue extends React.Component {
       int: 0,
       years: 0,
       pmt: 0,
-      futureVal: 0
+      futureVal: 0,
+      period: false
     };
   }
 
@@ -23,10 +24,18 @@ class FutureValue extends React.Component {
       this.state.pv,
       this.state.int,
       this.state.years,
-      this.state.pmt
+      this.state.pmt,
+      this.state.period
     );
     this.setState({ futureVal: fv });
   };
+
+  beginPeriod = () => {
+    this.setState({period: true})
+  }
+  endPeriod = () => {
+    this.setState({period: false})
+  }
 
   render() {
     return (
@@ -81,6 +90,15 @@ class FutureValue extends React.Component {
           <div className='label' onClick={event => this.onSubmit(event)}>
             =
           </div>
+          <div className='label' onClick={event => this.onSubmit(event)}>
+            <div className="label" onClick={event => this.beginPeriod()}>
+              Beginning Period
+            </div>
+            <div className="label" onClick={event => this.endPeriod()}>
+              Ending Period
+            </div>
+          </div>
+
         </div>
         <div className='future-value'>{this.state.futureVal}</div>
       </div>
