@@ -1,5 +1,3 @@
-import { Component } from 'react';
-
 export const futureValue = (pv, int, yr, pmt) => {
   const intConversion = int / 100;
   let fv = 0;
@@ -25,7 +23,6 @@ export const futureValueOfPresentValue = (pv, int, yr) => {
 
 // formula needs to be corrected
 export const futureValueOfAnnuity = (pv, int, yr, pmt) => {
-  let fv = 0;
   let roundFV;
   const compoundingCashFlows = { result: 0 };
   if (pv) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { futureValue, futureValueOfAnnuity } from '../modules/calculations';
+import { futureValue } from '../modules/calculations';
 // import NumberButtons from './numberButtons.js';
 
 class FutureValue extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import FutureValue from './Components/futureValueCal';
 import WACCInputs from './Components/waccInputs';
-import NumberButtons from './Components/numberButtons';
+// import NumberButtons from './Components/numberButtons';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
