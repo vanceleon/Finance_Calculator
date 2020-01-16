@@ -1,5 +1,5 @@
 import React from 'react';
-import { futureValue } from '../modules/calculations';
+import { futureValue, futureValueOfAnnuity } from '../modules/calculations';
 // import NumberButtons from './numberButtons.js';
 
 class FutureValue extends React.Component {
@@ -67,15 +67,15 @@ class FutureValue extends React.Component {
             />
           </div>
 
-          <span className="label">PMT</span>
-        <input
-          className='pmt'
-          name='pmt'
-          type='number'
-          placeholder='PMT'
-          value={this.state.pmt}
-          onChange={this.onChange}
-        />
+          <span className='label'>PMT</span>
+          <input
+            className='pmt'
+            name='pmt'
+            type='number'
+            placeholder='PMT'
+            value={this.state.pmt}
+            onChange={this.onChange}
+          />
         </form>
         <div className='result'>
           <div className='label' onClick={event => this.onSubmit(event)}>
