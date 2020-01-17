@@ -4,6 +4,7 @@ import {
   costOfDebt,
   costOfEquity
 } from '../modules/waccCalculations';
+import { Button } from 'semantic-ui-react';
 
 export default function WACCInputs() {
   // Cost of Equity
@@ -93,7 +94,7 @@ export default function WACCInputs() {
             onChange={e => setRf(e.target.value)}
           />
         </div>
-        <div className='result'>
+        <div className='inputs'>
           <span className='label'>Market Return</span>
           <input
             className='term-length'
@@ -103,16 +104,17 @@ export default function WACCInputs() {
             value={rm}
             onChange={e => setRm(e.target.value)}
           />
-          <div
-            className='result'
+        </div>
+        <div className='result'>
+          <Button
             onClick={e => {
               handleEquitySubmit(e);
             }}
           >
             Calculate
-          </div>
+          </Button>
+          <div className='calculated-result'>{costEquity}</div>
         </div>
-        <div className='answer'>{costEquity}</div>
       </div>
       <div className='problem'>
         <h1>Cost of Debt</h1>
@@ -138,15 +140,17 @@ export default function WACCInputs() {
             onChange={e => setTaxRate(e.target.value)}
           />
         </div>
-        <div
-          className='result'
-          onClick={e => {
-            handleDebtSubmit(e);
-          }}
-        >
-          Calculate
+        <div className='result'>
+          <Button
+            className='result'
+            onClick={e => {
+              handleDebtSubmit(e);
+            }}
+          >
+            Calculate
+          </Button>
+          <div className='calculated-result'>{costDebt}</div>
         </div>
-        <div className='answer'>{costDebt}</div>
       </div>
       <div className='problem'>
         <h1>Weighted Average Cost of Capital</h1>
@@ -172,15 +176,16 @@ export default function WACCInputs() {
             onChange={e => setDebtWeight(e.target.value)}
           />
         </div>
-        <div
-          className='result'
-          onClick={e => {
-            handleWaccSubmit(e);
-          }}
-        >
-          Calculate Weighted Average Cost of Capital
+        <div className='result'>
+          <Button
+            onClick={e => {
+              handleWaccSubmit(e);
+            }}
+          >
+            Calculate WACC
+          </Button>
+          <div className='calculated-result'>{wacc}</div>
         </div>
-        <div className='answer'>{wacc}</div>
       </div>
     </form>
   );
