@@ -13,7 +13,7 @@ function App() {
       <div className='App'>
         <div className='ui menu'>
             <a className='item'>
-              <Link to='/home'>Home</Link>
+              <Link to='/'>Home</Link>
             </a>
             <a className='item'>
               <Link to='/fv'>Future Value</Link>
@@ -22,7 +22,7 @@ function App() {
               <Link to='/wacc'>WACC</Link>
             </a>
         </div>
-        <Route exact path='/home'>
+        <Route exact path='/'>
           <Home/>
         </Route>
         <Route path='/fv'>
