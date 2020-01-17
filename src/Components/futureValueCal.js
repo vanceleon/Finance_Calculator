@@ -1,5 +1,7 @@
 import React from 'react';
 import { futureValue } from '../modules/calculations';
+
+import { Button } from 'semantic-ui-react';
 // import NumberButtons from './numberButtons.js';
 
 class FutureValue extends React.Component {
@@ -31,21 +33,22 @@ class FutureValue extends React.Component {
   };
 
   beginPeriod = () => {
-    this.setState({period: true})
-  }
+    this.setState({ period: true });
+  };
   endPeriod = () => {
-    this.setState({period: false})
-  }
+    this.setState({ period: false });
+  };
 
   render() {
+    const { active } = this.state;
     return (
       <div className='calculator-face'>
         <form className='cash-flow-inputs'>
           {/* <h1>Calculator:</h1> */}
-          <div className='pv'>
+          <div className='inputs'>
             <span className='label'>PV</span>
             <input
-              className='present-value'
+              className='input-value'
               name='pv'
               type='number'
               placeholder='Present Value'
@@ -53,10 +56,10 @@ class FutureValue extends React.Component {
               onChange={this.onChange}
             />
           </div>
-          <div className='interest-rates'>
+          <div className='inputs'>
             <span className='label'>Interest Rate</span>
             <input
-              className='interest-rate'
+              className='input-value'
               name='int'
               type='number'
               placeholder='Interest (APR)'
@@ -64,10 +67,10 @@ class FutureValue extends React.Component {
               onChange={this.onChange}
             />
           </div>
-          <div className='years'>
+          <div className='inputs'>
             <span className='label'>Years</span>
             <input
-              className='term-length'
+              className='input-value'
               name='years'
               type='number'
               placeholder='Years'
@@ -75,32 +78,37 @@ class FutureValue extends React.Component {
               onChange={this.onChange}
             />
           </div>
-
-          <span className='label'>PMT</span>
-          <input
-            className='pmt'
-            name='pmt'
-            type='number'
-            placeholder='PMT'
-            value={this.state.pmt}
-            onChange={this.onChange}
-          />
+          <div className='inputs'>
+            <span className='label'>PMT</span>
+            <input
+              className='input-value'
+              name='pmt'
+              type='number'
+              placeholder='PMT'
+              value={this.state.pmt}
+              onChange={this.onChange}
+            />
+          </div>
         </form>
-        <div className='result'>
-          <div className='label' onClick={event => this.onSubmit(event)}>
-            =
-          </div>
-          <div className='label' onClick={event => this.onSubmit(event)}>
-            <div className="label" onClick={event => this.beginPeriod()}>
-              Beginning Period
-            </div>
-            <div className="label" onClick={event => this.endPeriod()}>
-              Ending Period
-            </div>
-          </div>
-
+        <div className='buttons'>
+          <Button toggle active={active} onClick={event => this.beginPeriod()}>
+            Beginning Period
+          </Button>
+          <Button toggle active={active} onClick={event => this.endPeriod()}>
+            Ending Period
+          </Button>
         </div>
-        <div className='future-value'>{this.state.futureVal}</div>
+
+        <div className='result'>
+          <Button
+            toggle
+            active={active}
+            onClick={event => this.onSubmit(event)}
+          >
+            Calculate
+          </Button>
+          <div className='calculated-result'>{this.state.futureVal}</div>
+        </div>
       </div>
     );
   }

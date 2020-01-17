@@ -4,15 +4,14 @@
   margin: 0 auto;
 }
 
-nav ul{
+nav ul {
   text-align: left;
   display: flex;
 }
 
-nav ul li{
+nav ul li {
   border: 1px solid red;
   padding: 10px 20px;
-  
 }
 
 .App-logo {
@@ -48,61 +47,59 @@ nav ul li{
 .calculator-face {
   width: 300px;
   height: 200px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   /* padding: 40px; */
   margin: 0 auto;
+  text-align: left;
   /* justify-content: ; */
 }
 
 .cash-flow-inputs {
   display: flex;
   border: 1px solid blue;
- flex-direction: column;
- height: 400px;
+  flex-direction: column;
+  height: 400px;
 
   /* align-items: flex-end;  */
 }
 
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
 
 .result {
-  /* display:flex; */
-border: 1px solid red;
-/* flex-direction: column; */
-justify-content: flex-end;
-  /* flex-direction: colu
-  mn; */
-  /* justify-content: center;  */
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
 }
 .label {
-  margin: 0 50px;
-  /* width: 100px; */
+  padding: 0 20px;
 }
 
-.buttons{
+.buttons {
   display: flex;
   max-width: 300px;
   height: 500px;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  background-color: grey;
 }
 
-.number{
+.number {
   font-size: x-large;
   padding: 25px;
   margin: 10px 10px;
   border: 1px solid white;
-  /* justify-content: space-evenly;
-  align-content: space-around; */
-  /* border-radius: 20px; */
   background-color: grey;
   color: white;
-  /* box-shadow: 3px 3px px black */
 }
 
-.number-0 {
-  width: 200px;
-  border: 1px solid white;
+.calculated-result {
+  display: flex;
+  align-items: center;
 }
+
+
