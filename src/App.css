@@ -43,6 +43,10 @@ nav ul li {
   }
 }
 
+.sub-description {
+  margin: 20px 0;
+}
+
 .calculator-face {
   width: 300px;
   height: 200px;
