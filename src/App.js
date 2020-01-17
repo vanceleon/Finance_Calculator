@@ -10,16 +10,18 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <div className='ui menu'>
-          <Link className='item' to='/'>
-            Home
-          </Link>
-          <Link className='item' to='/fv'>
-            Future Value
-          </Link>
-          <Link className='item' to='/wacc'>
-            WACC
-          </Link>
+        <div className='nav-menu'>
+          <div className='ui menu'>
+            <Link className='item' to='/'>
+              Home
+            </Link>
+            <Link className='item' to='/fv'>
+              Future Value
+            </Link>
+            <Link className='item' to='/wacc'>
+              WACC
+            </Link>
+          </div>
         </div>
         <Route exact path='/'>
           <Home />

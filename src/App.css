@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.nav-menu {
+  width: 70%;
+}
+
 nav ul {
   text-align: left;
   display: flex;
