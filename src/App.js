@@ -9,6 +9,7 @@ import './App.css';
 function App() {
   return (
     <Router>
+        <div className='App'>
       <nav>
         <ul>
           <li>
@@ -22,7 +23,6 @@ function App() {
           </li>
         </ul>
       </nav>
-      <div className='App'>
         <h1>Future Value Calculator</h1>
         <div className='description'>
           The future value calculator can be used to calculate the future value
