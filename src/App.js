@@ -1,7 +1,7 @@
 import React from 'react';
 import FutureValue from './Components/futureValueCal';
 import WACCInputs from './Components/waccInputs';
-import Home from './Components/home'
+import Home from './Components/home';
 // import NumberButtons from './Components/numberButtons';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -12,18 +12,18 @@ function App() {
     <Router>
       <div className='App'>
         <div className='ui menu'>
-            <a className='item'>
-              <Link to='/'>Home</Link>
-            </a>
-            <a className='item'>
-              <Link to='/fv'>Future Value</Link>
-            </a>
-            <a className='item'>
-              <Link to='/wacc'>WACC</Link>
-            </a>
+          <Link className='item' to='/'>
+            Home
+          </Link>
+          <Link className='item' to='/fv'>
+            Future Value
+          </Link>
+          <Link className='item' to='/wacc'>
+            WACC
+          </Link>
         </div>
         <Route exact path='/'>
-          <Home/>
+          <Home />
         </Route>
         <Route path='/fv'>
           <FutureValue />

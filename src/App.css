@@ -48,10 +48,8 @@ nav ul li {
   height: 200px;
   display: flex;
   flex-direction: column;
-  /* padding: 40px; */
   margin: 0 auto;
   text-align: left;
-  /* justify-content: ; */
 }
 
 .problem {
@@ -62,8 +60,6 @@ nav ul li {
   display: flex;
   flex-direction: column;
   height: 400px;
-
-  /* align-items: flex-end;  */
 }
 
 .inputs {
