@@ -10,7 +10,6 @@ nav ul {
 }
 
 nav ul li {
-  border: 1px solid red;
   padding: 10px 20px;
 }
 
@@ -55,9 +54,12 @@ nav ul li {
   /* justify-content: ; */
 }
 
+.problem {
+  margin: 15px 0;
+}
+
 .cash-flow-inputs {
   display: flex;
-  border: 1px solid blue;
   flex-direction: column;
   height: 400px;
 
@@ -71,9 +73,9 @@ nav ul li {
 }
 
 .result {
-  border: 1px solid red;
   display: flex;
   justify-content: space-around;
+  margin: 10px 0;
 }
 .label {
   padding: 0 20px;
