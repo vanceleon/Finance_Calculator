@@ -2,6 +2,7 @@ import React from 'react';
 import FutureValue from './Components/futureValueCal';
 import WACCInputs from './Components/waccInputs';
 import Home from './Components/home';
+import StockReturn from './Components/stockReturn';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -21,6 +22,9 @@ function App() {
             <Link className='item' to='/wacc'>
               WACC
             </Link>
+            <Link className='item' to='/stockreturn'>
+              Return
+            </Link>
           </div>
         </div>
         <Route exact path='/'>
@@ -31,6 +35,9 @@ function App() {
         </Route>
         <Route path='/wacc'>
           <WACCInputs />
+        </Route>
+        <Route path='/stockreturn'>
+          <StockReturn />
         </Route>
       </div>
     </Router>

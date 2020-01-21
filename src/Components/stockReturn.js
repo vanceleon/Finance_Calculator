@@ -1,55 +1,50 @@
 import React, { useState } from 'react';
+import {Button} from 'semantic-ui-react';
 
 export default function StockReturn() {
   const [begPrice, setBegPrice] = useState(0);
-  const [endPrice, setendPrice] = useState(0);
+  const [endPrice, setEndPrice] = useState(0);
+  const [stockReturn, setStockReturn] = useState(0);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
 
   return (
     <form className='calculator-face'>
       <div className='problem'>
-        <h1>Cost of Equity</h1>
+        <h1>Stock Price Return</h1>
         <div className='inputs'>
-          <span className='label'>Beta</span>
+          <span className='label'>Beginning Price</span>
           <input
             className='present-value'
-            name='beta'
+            name='begPrice'
             type='number'
             placeholder='Beta'
-            value={beta}
-            onChange={e => setBeta(e.target.value)}
+            value={begPrice}
+            onChange={e => setBegPrice(e.target.value)}
           />
         </div>
         <div className='inputs'>
-          <span className='label'>Risk Free Rate</span>
+          <span className='label'>Ending Price</span>
           <input
             className='interest-rate'
             name='rf'
             type='number'
             placeholder='Risk Free Rate'
-            value={rf}
-            onChange={e => setRf(e.target.value)}
-          />
-        </div>
-        <div className='inputs'>
-          <span className='label'>Market Return</span>
-          <input
-            className='term-length'
-            name='rm'
-            type='number'
-            placeholder='Market Return'
-            value={rm}
-            onChange={e => setRm(e.target.value)}
+            value={endPrice}
+            onChange={e => setEndPrice(e.target.value)}
           />
         </div>
         <div className='result'>
           <Button
             onClick={e => {
-              handleEquitySubmit(e);
+              handleSubmit(e);
             }}
           >
             Calculate
           </Button>
-          <div className='calculated-result'>{costEquity}</div>
+          <div className='calculated-result'>{stockReturn}</div>
         </div>
       </div>
     </form>
