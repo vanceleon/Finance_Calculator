@@ -2,7 +2,6 @@ import React from 'react';
 import FutureValue from './Components/futureValueCal';
 import WACCInputs from './Components/waccInputs';
 import Home from './Components/home';
-import NumberButtons from './Components/numberButtons';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -33,10 +32,6 @@ function App() {
         <Route path='/wacc'>
           <WACCInputs />
         </Route>
-        <Route path='/fv'>
-          <NumberButtons />
-        </Route>
-        
       </div>
     </Router>
   );
