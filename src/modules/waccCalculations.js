@@ -1,7 +1,4 @@
-const interestConversion = interest => {
-  const interestConversion = interest / 100;
-  return interestConversion;
-};
+import {interestConversion} from './conversions/unitConversions';
 
 export const weightedAverageCostOfCapital = WACCObj => {
   const costOfEq = costOfEquity(WACCObj);
