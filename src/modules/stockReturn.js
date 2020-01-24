@@ -1,4 +1,4 @@
-import { interestConversion } from './conversions/unitConversions';
+import {interestConversion} from './conversions/unitConversions';
 import StockReturn from '../Components/stockReturn';
 
 // export const stockHPRCalculation = stockObj => {
@@ -8,9 +8,7 @@ import StockReturn from '../Components/stockReturn';
 // }
 
 export const stockHPRCalculation = stockObj => {
-  const begPrice = interestConversion(stockObj.begPrice);
-  const endPrice = interestConversion(stockObj.endPrice);
-  const result = (endPrice - begPrice) / begPrice;
-
-  return result;
+  const result = (stockObj.endPrice - stockObj.begPrice)/stockObj.begPrice
+  const roundedResult = result.toFixed(2);
+  return roundedResult;
 };

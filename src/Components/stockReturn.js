@@ -52,7 +52,7 @@ export default function StockReturn() {
           >
             Calculate
           </Button>
-          {/* <div className='calculated-result'>{result}</div> */}
+          <div className='calculated-result'>{result}</div>
         </div>
       </div>
     </form>
