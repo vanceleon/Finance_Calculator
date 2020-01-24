@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
-import {Button} from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
+import { stockHPRCalculation } from '../modules/stockReturn';
 
 export default function StockReturn() {
   const [begPrice, setBegPrice] = useState(0);
   const [endPrice, setEndPrice] = useState(0);
-  const [stockReturn, setStockReturn] = useState(0);
+  const [result, setResult] = useState(0);
 
   const handleSubmit = e => {
     e.preventDefault();
+    const stockObj = {
+      result,
+      begPrice,
+      endPrice
+    };
+    const stockHPR = stockHPRCalculation(stockObj);
+    setResult(stockHPR);
   };
 
   return (
@@ -44,7 +52,7 @@ export default function StockReturn() {
           >
             Calculate
           </Button>
-          <div className='calculated-result'>{stockReturn}</div>
+          <div className='calculated-result'>{result}</div>
         </div>
       </div>
     </form>
