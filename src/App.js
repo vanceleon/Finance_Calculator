@@ -22,9 +22,9 @@ function App() {
             <Link className='item' to='/wacc'>
               WACC
             </Link>
-            <Link className='item' to='/stockreturn'>
+            {/* <Link className='item' to='/stockreturn'>
               Return
-            </Link>
+            </Link> */}
           </div>
         </div>
         <Route exact path='/'>
@@ -36,9 +36,9 @@ function App() {
         <Route path='/wacc'>
           <WACCInputs />
         </Route>
-        <Route path='/stockreturn'>
+        {/* <Route path='/stockreturn'>
           <StockReturn />
-        </Route>
+        </Route> */}
       </div>
     </Router>
   );
