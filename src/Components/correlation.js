@@ -3,6 +3,7 @@ import { Button } from 'semantic-ui-react';
 
 export default function Correlation() {
   const [result, setResult] = useState(0);
+  const [ticker1, setticker1] = useState(initialState)
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -18,15 +19,15 @@ export default function Correlation() {
   return (
     <form className='calculator-face'>
       <div className='problem'>
-        <h1>Stock Price Return</h1>
+        <h1>Correlation Between Two Stocks</h1>
         <div className='inputs'>
-          <span className='label'>Beginning Price</span>
+          <span className='label'>Enter Ticker Here</span>
           <input
             className='present-value'
             name='begPrice'
             type='number'
             placeholder='Beta'
-            value={begPrice}
+            value={ticker1}
             onChange={e => setBegPrice(e.target.value)}
           />
         </div>
