@@ -15,16 +15,16 @@ export default function InputForm() {
     <form className='calculator-face'>
       <div className='problem'>
         <h1>{inputObj.header}</h1>
-        {inputObj.inputs.map((i) => {
+        {inputObj.inputs.map(input => {
           return (
             <div className='inputs'>
-              <span className='label'>{inputObj.inputs[i].title}</span>
+              <span className='label'>{input.title}</span>
               <input
                 className='present-value'
                 name='begPrice'
                 type='number'
                 placeholder='Beta'
-                value={inputObj.inputs[i].value}
+                value={input.value}
                 onChange={e => setinputObj(e.target.value)}
               />
             </div>
