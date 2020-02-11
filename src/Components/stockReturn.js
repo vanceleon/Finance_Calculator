@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
 import { stockHPRCalculation } from '../modules/stockReturn';
+import {InputForm} from './utilities/form';
+
+
 
 export default function StockReturn() {
   const [begPrice, setBegPrice] = useState(0);
   const [endPrice, setEndPrice] = useState(0);
   const [result, setResult] = useState(0);
+
+
+  // const initialState = {
+  //   header: "Stock Price Return",
+  //   inputs: [{title: "Beginning Price", value: begPrice}, {}]
+  // }
+
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -19,11 +29,14 @@ export default function StockReturn() {
   };
 
   return (
+    // <div>
+
+    // </div>
     <form className='calculator-face'>
       <div className='problem'>
         <h1>Stock Price Return</h1>
         <div className='inputs'>
-          <span className='label'>Beginning Price</span>
+          <span className='label'></span>
           <input
             className='present-value'
             name='begPrice'
