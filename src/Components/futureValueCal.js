@@ -43,7 +43,7 @@ class FutureValue extends React.Component {
     const { active } = this.state;
     return (
       <div className='calculator-face'>
-        <form className='cash-flow-inputs'>
+        <form className='problem'>
           {/* <h1>Calculator:</h1> */}
           <div className='inputs'>
             <span className='label'>PV</span>
