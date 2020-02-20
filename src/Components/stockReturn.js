@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
 import { stockHPRCalculation } from '../modules/stockReturn';
-import {InputForm} from './utilities/form';
+// import {InputForm} from './utilities/form';
 
 
 
