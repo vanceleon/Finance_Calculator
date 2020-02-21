@@ -10,13 +10,6 @@ export default function StockReturn() {
   const [endPrice, setEndPrice] = useState(0);
   const [result, setResult] = useState(0);
 
-
-  // const initialState = {
-  //   header: "Stock Price Return",
-  //   inputs: [{title: "Beginning Price", value: begPrice}, {}]
-  // }
-
-
   const handleSubmit = e => {
     e.preventDefault();
     const stockObj = {
@@ -29,9 +22,6 @@ export default function StockReturn() {
   };
 
   return (
-    // <div>
-
-    // </div>
     <form className='calculator-face'>
       <div className='problem'>
         <h1>Stock Price Return</h1>
