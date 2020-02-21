@@ -90,23 +90,29 @@ class FutureValue extends React.Component {
             />
           </div>
         </form>
-        <div className='buttons'>
+        {/* <div className='buttons'> */}
+        <div className='result'>
           <Button className='result' onClick={event => this.beginPeriod()}>
             Beginning Period
           </Button>
+        </div>
+        <div className='result'>
           <Button className='result' onClick={event => this.endPeriod()}>
             Ending Period
           </Button>
         </div>
+        {/* </div> */}
 
         {/* <div className='result'> */}
+        <div className='result'>
           <Button
-            className='result'
+            // className='result'
             onClick={event => this.onSubmit(event)}
           >
             Calculate
           </Button>
           <div className='calculated-result'>{this.state.futureVal}</div>
+        </div>
         {/* </div> */}
       </div>
     );
