@@ -99,7 +99,7 @@ class FutureValue extends React.Component {
           </Button>
         </div>
 
-        <div className='result'>
+        {/* <div className='result'> */}
           <Button
             className='result'
             onClick={event => this.onSubmit(event)}
@@ -107,7 +107,7 @@ class FutureValue extends React.Component {
             Calculate
           </Button>
           <div className='calculated-result'>{this.state.futureVal}</div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
