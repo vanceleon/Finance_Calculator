@@ -92,12 +92,12 @@ class FutureValue extends React.Component {
         </form>
         {/* <div className='buttons'> */}
         <div className='result'>
-          <Button className='result' onClick={event => this.beginPeriod()}>
+          <Button id='period' onClick={event => this.beginPeriod()}>
             Beginning Period
           </Button>
         </div>
         <div className='result'>
-          <Button className='result' onClick={event => this.endPeriod()}>
+          <Button id='period' onClick={event => this.endPeriod()}>
             Ending Period
           </Button>
         </div>
