@@ -4,6 +4,7 @@ import WACCInputs from './Components/waccInputs';
 import Home from './Components/home';
 import StockReturn from './Components/stockReturn';
 import Correlation from './Components/correlation';
+import Navigation from './Components/navigation';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -12,22 +13,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <div className='nav-menu'>
-          <div className='ui menu'>
-            <Link className='item' to='/'>
-              Home
-            </Link>
-            <Link className='item' to='/fv'>
-              Future Value
-            </Link>
-            <Link className='item' to='/wacc'>
-              WACC
-            </Link>
-            <Link className='item' to='/stockreturn'>
-              Return
-            </Link>
-          </div>
-        </div>
+        <Navigation/>
         <Route exact path='/'>
           <Home />
         </Route>

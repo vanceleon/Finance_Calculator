@@ -87,6 +87,7 @@ nav ul li {
   /* justify-content: start; */
   /* border: 1px ssolid red; */
 }
+
 .label {
   padding: 0 20px;
 }
@@ -113,5 +114,3 @@ nav ul li {
   display: flex;
   align-items: center;
 }
-
-
