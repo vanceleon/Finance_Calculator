@@ -79,9 +79,15 @@ nav ul li {
 
 .result {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   margin: 10px 0;
 }
+
+#period {
+  /* justify-content: start; */
+  /* border: 1px ssolid red; */
+}
+
 .label {
   padding: 0 20px;
 }
@@ -108,5 +114,3 @@ nav ul li {
   display: flex;
   align-items: center;
 }
-
-
