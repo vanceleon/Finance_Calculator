@@ -17,6 +17,9 @@ export default function Navigation() {
         <Link className='item' to='/stockreturn'>
           Return
         </Link>
+        <Link className='item' to='/correlation'>
+          Correlation
+        </Link>
       </div>
     </div>
   );
