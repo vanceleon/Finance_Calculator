@@ -1,34 +1,44 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
-import {stockCorrelationFunc} from '../modules/correlation';
+import { stockCorrelationFunc } from '../modules/correlation';
+
+import InputsInForm from './reusableComponents/form';
+// reusable code for refactoring
+// const initialState = {
+//   header: 'Correlation',
+//   ticker1: 'AAPL',
+//   ticker2: 'GOOGL',
+// };
 
 export default function Correlation() {
   const [result, setResult] = useState(0);
-  const [ticker1, setticker1] = useState("AAPL")
-  const [ticker2, setticker2] = useState("GOOGL")
+  const [ticker1, setticker1] = useState('AAPL');
+  const [ticker2, setticker2] = useState('GOOGL');
+  // const [inputs, setInputs] = useState(initialState);
 
   const handleSubmit = e => {
     e.preventDefault();
-    const stockCorrelationObj = {
+    const correlationObject = {
       ticker1,
       ticker2,
-      result
+      result,
     };
-    const stockCorrelation = stockCorrelationFunc(stockCorrelationObj);
+    const stockCorrelation = stockCorrelationFunc(correlationObject);
     setResult(stockCorrelation);
   };
 
   return (
     <form className='calculator-face'>
       <div className='problem'>
+        {/* <InputsInForm inputs={inputs} setInputs={setInputs} /> */}
+
         <h1>Correlation Between Two Stocks</h1>
         <div className='inputs'>
           <span className='label'>Enter Ticker Here</span>
           <input
-            className='present-value'
+            className='input-value'
             name='begPrice'
-            type='number'
-            placeholder='Beta'
+            type='text'
             value={ticker1}
             onChange={e => setticker1(e.target.value)}
           />
@@ -36,10 +46,19 @@ export default function Correlation() {
         <div className='inputs'>
           <span className='label'>Enter Ticker Here</span>
           <input
-            className='interest-rate'
+            className='input-value'
             name='rf'
-            type='number'
-            placeholder='Risk Free Rate'
+            type='text'
+            value={ticker2}
+            onChange={e => setticker2(e.target.value)}
+          />
+        </div>
+        <div className='inputs'>
+          <span className='label'>Time Horizon</span>
+          <input
+            className='input-value'
+            name='rf'
+            type='text'
             value={ticker2}
             onChange={e => setticker2(e.target.value)}
           />
@@ -58,3 +77,4 @@ export default function Correlation() {
     </form>
   );
 }
+// }

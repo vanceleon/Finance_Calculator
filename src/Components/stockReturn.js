@@ -26,7 +26,7 @@ export default function StockReturn() {
       <div className='problem'>
         <h1>Stock Price Return</h1>
         <div className='inputs'>
-          <span className='label'></span>
+          <span className='label'>Beginning Price</span>
           <input
             className='present-value'
             name='begPrice'
