@@ -24,7 +24,7 @@ export default function Correlation() {
       result,
     };
     const stockCorrelation = stockCorrelationFunc(correlationObject);
-    // setResult(stockCorrelation);
+    setResult(stockCorrelation);
   };
 
   return (
@@ -39,7 +39,6 @@ export default function Correlation() {
             className='input-value'
             name='begPrice'
             type='text'
-            placeholder='Enter Ticker Here'
             value={ticker1}
             onChange={e => setticker1(e.target.value)}
           />
@@ -50,7 +49,16 @@ export default function Correlation() {
             className='input-value'
             name='rf'
             type='text'
-            // placeholder={}
+            value={ticker2}
+            onChange={e => setticker2(e.target.value)}
+          />
+        </div>
+        <div className='inputs'>
+          <span className='label'>Time Horizon</span>
+          <input
+            className='input-value'
+            name='rf'
+            type='text'
             value={ticker2}
             onChange={e => setticker2(e.target.value)}
           />
