@@ -1,103 +1,72 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
-import {stockCorrelationFunc} from '../modules/correlation';
+import { stockCorrelationFunc } from '../modules/correlation';
+
+import InputsInForm from './reusableComponents/form';
+// reusable code for refactoring
+// const initialState = {
+//   header: 'Correlation',
+//   ticker1: 'AAPL',
+//   ticker2: 'GOOGL',
+// };
 
 export default function Correlation() {
   const [result, setResult] = useState(0);
-  const [ticker1, setticker1] = useState("AAPL")
-  const [ticker2, setticker2] = useState("GOOGL")
+  const [ticker1, setticker1] = useState('AAPL');
+  const [ticker2, setticker2] = useState('GOOGL');
+  // const [inputs, setInputs] = useState(initialState);
 
   const handleSubmit = e => {
     e.preventDefault();
-    const stockCorrelationObj = {
+    const correlationObject = {
       ticker1,
       ticker2,
-      result
+      result,
     };
-    const stockCorrelation = stockCorrelationFunc(stockCorrelationObj);
-    setResult(stockCorrelation);
+    const stockCorrelation = stockCorrelationFunc(correlationObject);
+    // setResult(stockCorrelation);
   };
 
-  if(result) {
-    return (
-      <form className='calculator-face'>
-        <div className='problem'>
-          <h1>Correlation Between Two Stocks</h1>
-          <div className='inputs'>
-            <span className='label'>Enter Ticker Here</span>
-            <input
-              className='present-value'
-              name='begPrice'
-              type='text'
-              placeholder={result}
-              value={ticker1}
-              onChange={e => setticker1(e.target.value)}
-            />
-          </div>
-          <div className='inputs'>
-            <span className='label'>Enter Ticker Here</span>
-            <input
-              className='interest-rate'
-              name='rf'
-              type='text'
-              placeholder={result}
-              value={ticker2}
-              onChange={e => setticker2(e.target.value)}
-            />
-          </div>
-          <div className='result'>
-            <Button
-              onClick={e => {
-                handleSubmit(e);
-              }}
-            >
-              Calculate
-            </Button>
-            <div className='calculated-result'>{result}</div>
-          </div>
+  return (
+    <form className='calculator-face'>
+      <div className='problem'>
+        {/* <InputsInForm inputs={inputs} setInputs={setInputs} /> */}
+
+        <h1>Correlation Between Two Stocks</h1>
+        <div className='inputs'>
+          <span className='label'>Enter Ticker Here</span>
+          <input
+            className='input-value'
+            name='begPrice'
+            type='text'
+            placeholder='Enter Ticker Here'
+            value={ticker1}
+            onChange={e => setticker1(e.target.value)}
+          />
         </div>
-      </form>
-    )
-  }else{
-    
-    return (
-      <form className='calculator-face'>
-        <div className='problem'>
-          <h1>Correlation Between Two Stocks</h1>
-          <div className='inputs'>
-            <span className='label'>Enter Ticker Here</span>
-            <input
-              className='present-value'
-              name='begPrice'
-              type='text'
-              placeholder='Enter Ticker Here'
-              value={ticker1}
-              onChange={e => setticker1(e.target.value)}
-            />
-          </div>
-          <div className='inputs'>
-            <span className='label'>Enter Ticker Here</span>
-            <input
-              className='interest-rate'
-              name='rf'
-              type='text'
-              // placeholder={}
-              value={ticker2}
-              onChange={e => setticker2(e.target.value)}
-            />
-          </div>
-          <div className='result'>
-            <Button
-              onClick={e => {
-                handleSubmit(e);
-              }}
-            >
-              Calculate
-            </Button>
-            <div className='calculated-result'>{result}</div>
-          </div>
+        <div className='inputs'>
+          <span className='label'>Enter Ticker Here</span>
+          <input
+            className='input-value'
+            name='rf'
+            type='text'
+            // placeholder={}
+            value={ticker2}
+            onChange={e => setticker2(e.target.value)}
+          />
         </div>
-      </form>
-    );
-  }
+        <div className='result'>
+          <Button
+            onClick={e => {
+              handleSubmit(e);
+            }}
+          >
+            Calculate
+          </Button>
+          <div className='calculated-result'>{result}</div>
+        </div>
+      </div>
+    </form>
+  );
 }
+// }
