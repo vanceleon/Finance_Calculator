@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
-import { stockCorrelationFunc } from '../modules/correlation';
+import stockCorrelationCalculation  from '../modules/correlation';
 
 import InputsInForm from './reusableComponents/form';
 // reusable code for refactoring
@@ -23,7 +23,8 @@ export default function Correlation() {
       ticker2,
       result,
     };
-    const stockCorrelation = stockCorrelationFunc(correlationObject);
+    const stockCorrelation = stockCorrelationCalculation();
+    console.log(stockCorrelation)
     setResult(stockCorrelation);
   };
 
