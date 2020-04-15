@@ -3,6 +3,12 @@ import { Button } from 'semantic-ui-react';
 
 export default function PerformanceAttribution() {
   const [performanceResult, setperformanceResult] = useState(initialState)
+  // beginning, endprices, sectors, portfolio weights, sector weights, 
+  // beginning and ending prices will be for return calculations
+  // security selection, sector allocation
+
+  // This function can house the sub components
+  
   
   const handleSubmit = e => {
     e.preventDefault();
@@ -15,6 +21,8 @@ export default function PerformanceAttribution() {
     // setResult(stockCorrelation);
   };
   return(
+    // need a way to add stocks to the list,
+    //
     <form className='calculator-face'>
       <div className='problem'>
         {/* <InputsInForm inputs={inputs} setInputs={setInputs} /> */}
