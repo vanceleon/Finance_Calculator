@@ -3,7 +3,7 @@ import FutureValue from './Components/futureValueCal';
 import WACCInputs from './Components/waccInputs';
 import Home from './Components/home';
 import StockReturn from './Components/stockReturn';
-import Correlation from './Components/correlation';
+// import Correlation from './Components/correlation';
 import Navigation from './Components/navigation';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -26,9 +26,9 @@ function App() {
         <Route path='/stockreturn'>
           <StockReturn />
         </Route>
-        <Route path='/correlation'>
+        {/* <Route path='/correlation'>
           <Correlation />
-        </Route>
+        </Route> */}
       </div>
     </Router>
   );
