@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
 import PortfolioPerformance from './performance/portfolioPerformance';
+import SectorPerformance from './performance/sectorPerformance';
 
 export default function PerformanceAttribution() {
   const [performanceResult, setperformanceResult] = useState(initialState);
@@ -27,6 +28,7 @@ export default function PerformanceAttribution() {
 
         <h1>Performance Attribution Calculation</h1>
         <PortfolioPerformance/>
+        <SectorPerformance/>
         <div className='result'>
           <Button
             onClick={e => {
