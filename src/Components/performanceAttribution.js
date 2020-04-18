@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
 import PortfolioPerformance from './performance/portfolioPerformance';
 import SectorPerformance from './performance/sectorPerformance';
+import PriceInsertion from './performance/priceInsert';
 
 export default function PerformanceAttribution() {
   const [performanceResult, setperformanceResult] = useState(initialState);
@@ -27,6 +28,7 @@ export default function PerformanceAttribution() {
         {/* <InputsInForm inputs={inputs} setInputs={setInputs} /> */}
 
         <h1>Performance Attribution Calculation</h1>
+        <PriceInsertion/>
         <PortfolioPerformance/>
         <SectorPerformance/>
         <div className='result'>
