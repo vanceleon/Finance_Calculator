@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Button } from 'semantic-ui-react';
 
 
-export default function SectorPerformance() {
+export default function PriceInsertion() {
   const [stockReturn, setstockReturn] = useState(initialState)
 
   return (
