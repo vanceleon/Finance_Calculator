@@ -5,6 +5,8 @@ import Home from './Components/home';
 import StockReturn from './Components/stockReturn';
 // import Correlation from './Components/correlation';
 import Navigation from './Components/navigation';
+import CDLadder from './Components/cdLadder';
+
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -29,6 +31,9 @@ function App() {
         {/* <Route path='/correlation'>
           <Correlation />
         </Route> */}
+        <Route path='/cd-ladder'>
+          <CDLadder />
+        </Route>
       </div>
     </Router>
   );
