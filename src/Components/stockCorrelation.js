@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'semantic-ui-react';
-import stockCorrelationCalculation  from '../modules/correlation';
+import {stockCorrelationCalculation}  from '../modules/stockCorrelationCalculation.js';
 
 import InputsInForm from './reusableComponents/form';
 // reusable code for refactoring
