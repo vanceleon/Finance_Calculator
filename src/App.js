@@ -3,9 +3,9 @@ import FutureValue from './Components/futureValueCal';
 import WACCInputs from './Components/waccInputs';
 import Home from './Components/home';
 import StockReturn from './Components/stockReturn';
-// import Correlation from './Components/correlation';
+import Correlation from './Components/stockCorrelation';
 import Navigation from './Components/navigation';
-import CDLadder from './Components/cdLadder';
+// import CDLadder from './Components/cdLadder';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -28,12 +28,12 @@ function App() {
         <Route path='/stockreturn'>
           <StockReturn />
         </Route>
-        {/* <Route path='/correlation'>
+        <Route path='/correlation'>
           <Correlation />
-        </Route> */}
-        <Route path='/cd-ladder'>
-          <CDLadder />
         </Route>
+        {/* <Route path='/cd-ladder'>
+          <CDLadder />
+        </Route> */}
       </div>
     </Router>
   );

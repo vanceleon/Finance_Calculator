@@ -21,7 +21,8 @@ class FutureValue extends React.Component {
     this.setState({ [ev.target.name]: ev.target.value });
   };
 
-  onSubmit = () => {
+  onSubmit = (event) => {
+    console.log(event)
     const fv = futureValue(
       this.state.pv,
       this.state.int,
@@ -35,7 +36,8 @@ class FutureValue extends React.Component {
   beginPeriod = () => {
     this.setState({ period: true });
   };
-  endPeriod = () => {
+  endPeriod = (event) => {
+    console.log(event)
     this.setState({ period: false });
   };
 
